@@ -1,0 +1,36 @@
+{% set modifier = { name: 'nav'} %}
+
+{% set nav_items = [
+	{
+		name: 'about',
+		link: '/about'
+	},
+	{
+		name: 'resume',
+		link: '/resume'
+	},
+	{
+		name: 'create',
+		link: '/create'
+	},
+	{
+		name: 'contact',
+		link: '/contact'
+	}
+] %}
+
+<section class="nav">
+	<div class="nav__logo-wrapper">
+		{% include "../partials/logo.html" %}
+	</div>
+
+	<div class="nav__elements">
+		{% for nav_item in nav_items %}
+			<div class="nav__item">
+				<a href="{{ nav_item.link }}" class="nav__item-link {% if page.type == nav_item.name %}is-active{% endif %}">
+					{{ nav_item.name}}
+				</a>
+			</div>
+		{% endfor %}
+	</div>
+</section>

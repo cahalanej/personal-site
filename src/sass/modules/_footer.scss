@@ -1,0 +1,23 @@
+.footer {
+	width: 100%;
+	background-color: $color__eastern-blue;
+	color: white;
+	padding: 10px;
+}
+
+.footer__copyright {
+	text-align: center;
+	font: 10px/10px $font__serif;
+	font-weight: $font-weight__light;
+}
+
+@media only screen and (min-width: 575px) {
+	.footer {
+		padding: 15px;
+	}
+
+	.footer__copyright {
+		font: 9px/9px $font__serif;
+		font-weight: $font-weight__light;
+	}
+}

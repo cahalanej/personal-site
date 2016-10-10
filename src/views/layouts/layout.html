@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            {{ page.title }}
+        </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="description" content="{{ page.description }}">
+
+        <!-- <link rel="shortcut icon" type="image/ico" href="favicon.ico" /> -->
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lato:thin,light,regular,bold|Merriweather:light">
+        <link href="/css/style.css" rel="stylesheet">
+
+        {% block styles %}{% endblock %}
+    </head>
+    <body class="is-{{ page.type }}">
+        {% include "../partials/header.html" %}
+
+        <div class="content-wrapper">
+            {% block content %}
+            {% endblock %}
+        </div>
+
+        {% include "../partials/footer.html" %}
+    </body>
+</html>
