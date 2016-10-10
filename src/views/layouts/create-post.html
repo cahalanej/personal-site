@@ -1,0 +1,51 @@
+{% extends "../layouts/layout.html" %}
+
+{% block content %}
+    <section class="body-text">
+        <h2 class="body-text__header body-text__header--post">
+            {{ post.title | safe }}
+        </h2>
+    </section>
+    <section class="media media--post">
+        <div class="media__wrapper media__wrapper--post">
+            <div class="media-unit media-unit--post" data-post-id="{{ post.id }}">
+                {% if post.type == "video" %}
+
+                    {% set post_player = post.player | first %}
+
+                    {{ post_player.embed_code | safe }}
+
+                {% endif %}
+
+                {% if post.type == "photo" %}
+
+                    {% set post_photo = post.photos | first %}
+
+                    <img class="media-unit__image media-unit__image--post" src="{{ post_photo.original_size.url }}"/>
+
+                {% endif %}
+            </div>
+            <div class="media__tags">
+                {% for tag in post.tags %}
+
+                    {% if tag != 'show_on_site' %}
+                        <span class="media__tag">
+                            #{{tag}}
+                        </span>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="media__caption">
+            <div class="body-text">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam facilisis pretium augue et aliquet. Aliquam tincidunt mauris non accumsan fermentum. Etiam sit amet maximus leo. Suspendisse iaculis pellentesque lacus, eget ultricies tortor rhoncus in. Pellentesque et arcu mauris. Etiam facilisis orci non tellus convallis rhoncus. Nulla feugiat neque sed odio elementum, eget lacinia enim vehicula. Aliquam pulvinar quis lacus ullamcorper rhoncus. Donec euismod orci vitae ligula dapibus, a scelerisque sapien cursus.
+                </p>
+                <p>
+                    View the source on <a href="#">Github</a> or check out the <a href="#">live demo</a>.
+                </p>
+            </div>
+        </div>
+    </section>
+{% endblock %}
