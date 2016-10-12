@@ -1,7 +1,8 @@
 var express = require('express'),
     router = express.Router(),
     request = require('request'),
-    config = require('../config');
+    config = require('../config'),
+    nodemailer = require('nodemailer');
 
 router.get('/', function(req, res) {
     res.render('layouts/about.html', {
@@ -35,7 +36,8 @@ router.get('/resume', function(req, res) {
             title: 'Resume -- Jennifer Cahalane',
             description: 'The resume of Jennifer Cahalane',
             type: 'resume'
-        }
+        },
+        skills: config.SKILLS
     });
 });
 
@@ -87,6 +89,51 @@ router.get('/contact', function(req, res) {
             description: 'How to get in touch with Jennifer Cahalane',
             type: 'contact'
         }
+    });
+});
+
+router.post('/contact/send', function(req, res) {
+    var transporter = nodemailer.createTransport({
+        service: 'Gmail',
+        auth: {
+            user: config.USER_EMAIL, // Your email id
+            pass: config.USER_PASSWORD // Your password
+        }
+    });
+
+    var mailOptions = {
+        from: config.USER_EMAIL, // sender address
+        to: 'cahalanejennifer@gmail.com', // list of receivers
+        subject: 'Email Example', // Subject line
+        text: 'check 1 2. 2 2' //, // plaintext body
+        // html: '<b>Hello world ✔</b>' // You can choose to send an HTML body instead
+    };
+
+    transporter.sendMail(mailOptions, function(error, info){
+        if(error){
+            response = {
+                response: {
+                    status: 'error',
+                    details: error
+                }
+            };
+        } else{
+            response = {
+                response: {
+                    status: 'success',
+                    details: info.response
+                }
+            };
+        }
+        console.log(response);
+
+        res.render('layouts/contact-success.html', {
+            page: {
+                title: 'Contact -- Jennifer Cahalane',
+                description: 'How to get in touch with Jennifer Cahalane',
+                type: 'contact'
+            }
+        });
     });
 });
 

@@ -7,3 +7,29 @@
 	border-right: 1px solid $color__eastern-blue;
 	margin-right: 20px;
 }
+
+.rs__wrapper {
+	display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.rs__column {
+	padding: 0 15px;
+}
+
+.rs__skill {
+	display: flex;
+	font: 14px/22px $font__serif;
+	font-weight: $font-weight__light;
+	margin: 10px;
+}
+
+.rs__skill-name {
+	color: $color__black;
+	width: 90px;
+}
+
+.rs__stars {
+	color: $color__eastern-blue;
+}

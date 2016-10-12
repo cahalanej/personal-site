@@ -1,9 +1,28 @@
+.body-text__section-header {
+    color: $color__black;
+    font: 22px/28px $font__sans-serif;
+    font-weight: $font-weight__bold;
+    border-bottom: 1px solid $color__black;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+
+}
+
 .body-text__header,
 .body-text h2 {
 	font: 18px/24px $font__sans-serif;
 	font-weight: $font-weight__bold;
 	color: $color__comp;
+	padding-bottom: 5px;
+}
+
+.body-text__sub-header {
+	font: 15px/22px $font__sans-serif;
+	font-weight: $font-weight__light;
+	color: $color__eastern-blue;
 	padding-bottom: 10px;
+	padding-left: 5px;
+    font-variant: small-caps;
 }
 
 .body-text__paragraph,
@@ -12,6 +31,23 @@
 	font-weight: $font-weight__light;
 	padding: 0 10px 15px;
 	color: $color__black;
+}
+
+.body-text__list {
+    padding-left: 20px;
+}
+
+.body-text__list-item {
+	font: 12px/18px $font__serif;
+	font-weight: $font-weight__light;
+	color: $color__black;
+	list-style-type: none;
+
+	&:before {
+		color: $color__eastern-blue;
+		content: '-';
+		padding-right: 5px;
+	}
 }
 
 .body-text__link,
@@ -35,8 +71,7 @@
 }
 
 .body-text__link--resume-download {
-	display: table;
-	margin: 5px 0;
+	margin: 5px;
 }
 
 @media only screen and (min-width: 575px) {
@@ -44,5 +79,15 @@
 	.body-text p {
 		padding: 0 20px 20px;
 		font: 14px/22px $font__serif;
+	}
+
+
+	.body-text__list-item {
+		font: 14px/22px $font__serif;
+	}
+
+	.body-text__link--resume-download {
+		display: table;
+		margin: 5px 0;
 	}
 }

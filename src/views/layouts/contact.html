@@ -6,4 +6,33 @@
             Contact me
         </h2>
     </section>
+
+    <section class="contact-section">
+        <form class="form" action="/contact/send" method="post">
+            <div class="form__field">
+                <input class="form__input" type="text" name="name" value="">
+                <label class="form__label" for="name">Name</label>
+            </div>
+            <div class="form__field">
+                <input class="form__input" type="text" name="email" value="">
+                <label class="form__label" for="email">Email</label>
+            </div>
+            <div class="form__field">
+                <input class="form__input" type="text" name="subject" value="">
+                <label class="form__label" for="subject">Subject</label>
+            </div>
+            <div class="form__field">
+                <input class="form__input" type="text" name="message" value="">
+                <label class="form__label" for="message">Message</label>
+            </div>
+
+            <input class="form__submit" type="submit" value="Submit">
+        </form>
+
+        <section class="contact-icons">
+            <a href="https://github.com/cahalanej" class="ci__icon ci__icon--github"></a>
+            <a href="https://www.linkedin.com/in/jennifer-cahalane-5b511362" class="ci__icon ci__icon--linkedIn"></a>
+            <a href="http://cahalanejennifer.tumblr.com/" class="ci__icon ci__icon--tumblr"></a>
+        </section>
+    </section>
 {% endblock %}

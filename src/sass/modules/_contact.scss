@@ -1,0 +1,96 @@
+.contact-section {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.contact-icons {
+	margin: 0 40px;
+}
+
+.ci__icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 0 30px;
+    background-image: url('../images/sprite_icons.svg');
+    background-size: 315%;
+    background-repeat: no-repeat;
+    display: block;
+}
+
+.ci__icon--linkedIn {
+	background-position-x: 50%;
+}
+
+.ci__icon--tumblr {
+	background-position-x: 100%;
+}
+
+.form {
+	padding: 0;
+	max-width: 600px;
+	display: inline-block;
+	width: 100%;
+}
+
+.form__field {
+	margin: 0 20px 20px;
+    display: flex;
+    flex-direction: column-reverse;
+    position: relative;
+    height: 40px;
+}
+
+.form__label {
+	font: 12px/16px $font__serif;
+	font-weight: $font-weight__light;
+	color: $color__black;
+	padding-left: 10px;
+    position: absolute;
+    bottom: 5px;
+    transition: all .5s ease;
+    pointer-events: none;
+}
+
+.form__input {
+	border: none;
+	box-shadow: 0 2px 2px -2px rgba($color__comp, 0.6);
+    width: 100%;
+    font: 14px/22px $font__serif;
+	font-weight: $font-weight__light;
+	color: $color__black;
+	padding: 0 10px;
+
+	&:focus {
+		box-shadow: 0 4px 2px -2px rgba($color__comp, 0.6);
+
+		& + .form__label {
+			font-size: 10px;
+			color: $color__comp;
+			bottom: 23px;
+			padding-left: 0;
+		}
+	}
+}
+
+.form__submit {
+	margin-top: 20px;
+	border: none;
+	background: rgba($color__eastern-blue, 0.8);
+	padding: 5px 35px;
+	color: $color__white;
+	font: 14px/20px $font__sans-serif;
+	font-weight: $font-weight__bold;
+    font-variant: small-caps;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba($color__black, 0.4);
+    border-radius: 1px;
+
+	&:hover {
+		box-shadow: 0 3px 6px 0 rgba($color__black, 0.6);
+		background: $color__eastern-blue;
+	}
+}
+
+.form *:focus{
+    outline: none;
+}

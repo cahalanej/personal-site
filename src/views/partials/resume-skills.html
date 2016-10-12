@@ -1,0 +1,24 @@
+<section class="resume-skills">
+    <h2 class="body-text__section-header body-text__section-header--rs">
+        Skills
+    </h2>
+    <section class="rs__wrapper">
+        {% for column in skills %}
+            <div class="rs__column">
+                {% for skill_type in column %}
+                    <div class="rs__skills-block rs__skills-block--languages">
+                        <h2 class="body-text__header body-text__header--resume">
+                            {{ skill_type.section_title }}
+                        </h2>
+                        {% for skill in skill_type.skills %}
+                            <div class="rs__skill">
+                                <p class="rs__skill-name">{{ skill.name }}</p>
+                                <p class="rs__stars">{{ skill.stars }}</p>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </section>
+</section>
