@@ -101,12 +101,13 @@ router.post('/contact/send', function(req, res) {
         }
     });
 
+    var emailBody = req.body.message + ' // ' + req.body.name - req.body.email;
+
     var mailOptions = {
-        from: config.USER_EMAIL, // sender address
-        to: 'cahalanejennifer@gmail.com', // list of receivers
-        subject: 'Email Example', // Subject line
-        text: 'check 1 2. 2 2' //, // plaintext body
-        // html: '<b>Hello world ✔</b>' // You can choose to send an HTML body instead
+        from: req.body.email,
+        to: 'cahalane.jennifer@gmail.com',
+        subject: req.body.subject,
+        text: emailBody
     };
 
     transporter.sendMail(mailOptions, function(error, info){

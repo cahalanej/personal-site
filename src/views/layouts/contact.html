@@ -10,20 +10,20 @@
     <section class="contact-section">
         <form class="form" action="/contact/send" method="post">
             <div class="form__field">
-                <input class="form__input" type="text" name="name" value="">
+                <input required class="form__input" type="text" name="name" value="">
                 <label class="form__label" for="name">Name</label>
             </div>
             <div class="form__field">
-                <input class="form__input" type="text" name="email" value="">
+                <input required class="form__input" type="text" name="email" value="">
                 <label class="form__label" for="email">Email</label>
             </div>
             <div class="form__field">
-                <input class="form__input" type="text" name="subject" value="">
+                <input required class="form__input" type="text" name="subject" value="">
                 <label class="form__label" for="subject">Subject</label>
             </div>
-            <div class="form__field">
-                <input class="form__input" type="text" name="message" value="">
-                <label class="form__label" for="message">Message</label>
+            <div class="form__field form__field--textarea">
+                <textarea required class="form__input form__input--textarea" name="message" value="" maxlength="250"></textarea>
+                <label class="form__label form__label--textarea" for="message">Message</label>
             </div>
 
             <input class="form__submit" type="submit" value="Submit">

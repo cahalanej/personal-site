@@ -1,11 +1,10 @@
 .resume__wrapper {
 	display: flex;
+	flex-direction: column;
 }
 
 .resume__downloads {
-	min-width: 125px;
-	border-right: 1px solid $color__eastern-blue;
-	margin-right: 20px;
+	text-align: right;
 }
 
 .rs__wrapper {
@@ -32,4 +31,17 @@
 
 .rs__stars {
 	color: $color__eastern-blue;
+}
+
+@media only screen and (min-width: 575px) {
+	.resume__wrapper {
+		flex-direction: row;
+	}
+
+	.resume__downloads {
+		min-width: 125px;
+		border-right: 1px solid $color__eastern-blue;
+		margin-right: 20px;
+		text-align: left;
+	}
 }

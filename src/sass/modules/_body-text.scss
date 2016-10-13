@@ -20,9 +20,21 @@
 	font: 15px/22px $font__sans-serif;
 	font-weight: $font-weight__light;
 	color: $color__eastern-blue;
-	padding-bottom: 10px;
 	padding-left: 5px;
     font-variant: small-caps;
+}
+
+.body-text__bold {
+	font: 12px/18px $font__sans-serif;
+	font-weight: $font-weight__bold;
+	color: $color__black;
+	padding: 0 3px;
+	font-variant: small-caps;
+}
+
+.body-text__bold--resume {
+	display: block;
+	padding-left: 10px;
 }
 
 .body-text__paragraph,
@@ -72,6 +84,7 @@
 
 .body-text__link--resume-download {
 	margin: 5px;
+	display: inline-block;
 }
 
 @media only screen and (min-width: 575px) {
@@ -89,5 +102,24 @@
 	.body-text__link--resume-download {
 		display: table;
 		margin: 5px 0;
+	}
+
+	.body-text__sub-header {
+		padding-bottom: 10px;
+	}
+
+	.body-text__sub-header--resume {
+	    display: inline-block;
+	}
+
+	.body-text__bold--resume {
+		display: inline;
+		padding-left: 0;
+
+		&:before {
+			content: ':';
+			padding: 0 3px;
+			display: inline-block;
+		}
 	}
 }
