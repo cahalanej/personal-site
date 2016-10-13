@@ -101,7 +101,7 @@ router.post('/contact/send', function(req, res) {
         }
     });
 
-    var emailBody = req.body.message + ' // ' + req.body.name - req.body.email;
+    var emailBody = req.body.message + ' // ' + req.body.name + ' - ' + req.body.email;
 
     var mailOptions = {
         from: req.body.email,
