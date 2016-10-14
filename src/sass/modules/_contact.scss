@@ -11,13 +11,17 @@
 }
 
 .ci__icon {
-    background-image: url('../images/sprite_icons.svg');
+    background-image: url('../images/sprite_icons.png');
     background-size: 315%;
     background-repeat: no-repeat;
     display: inline-block;
     width: 30px;
     height: 30px;
     margin: 0;
+
+    &:hover {
+    	background-image: url('../images/sprite_icons_shadow.png');
+    }
 }
 
 .ci__icon--linkedIn {
@@ -34,7 +38,6 @@
 
 .form {
 	padding: 0;
-	// max-width: ;
 	display: inline-block;
 	width: 100%;
 }

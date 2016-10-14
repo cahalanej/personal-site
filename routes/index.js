@@ -35,7 +35,8 @@ router.get('/resume', function(req, res) {
         page: {
             title: 'Resume -- Jennifer Cahalane',
             description: 'The resume of Jennifer Cahalane',
-            type: 'resume'
+            type: 'resume',
+            additional_script: 'resume.js'
         },
         skills: config.SKILLS
     });
@@ -87,7 +88,8 @@ router.get('/contact', function(req, res) {
         page: {
             title: 'Contact -- Jennifer Cahalane',
             description: 'How to get in touch with Jennifer Cahalane',
-            type: 'contact'
+            type: 'contact',
+            additional_script: 'contact.js'
         }
     });
 });

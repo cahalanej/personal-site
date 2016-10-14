@@ -24,13 +24,17 @@
 		{% include "../partials/logo.html" %}
 	</div>
 
-	<div class="nav__elements">
-		{% for nav_item in nav_items %}
-			<div class="nav__item">
-				<a href="{{ nav_item.link }}" class="nav__item-link {% if page.type == nav_item.name %}is-active{% endif %}">
-					{{ nav_item.name}}
-				</a>
+	<div class="nav__block-wrapper js-nav__block-wrapper">
+		<div class="nav__block js-nav__block">
+			<div class="nav__elements">
+				{% for nav_item in nav_items %}
+					<div class="nav__item">
+						<a href="{{ nav_item.link }}" class="nav__item-link {% if page.type == nav_item.name %}is-active{% endif %}">
+							{{ nav_item.name}}
+						</a>
+					</div>
+				{% endfor %}
 			</div>
-		{% endfor %}
+		</div>
 	</div>
 </section>

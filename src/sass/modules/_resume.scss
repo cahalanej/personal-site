@@ -38,10 +38,19 @@
 		flex-direction: row;
 	}
 
-	.resume__downloads {
-		min-width: 125px;
-		border-right: 1px solid $color__eastern-blue;
+	.resume__downloads-wrapper {
 		margin-right: 20px;
+		border-right: 1px solid $color__eastern-blue;
+		min-width: 125px;
+		position: relative;
+	}
+
+	.resume__downloads {
 		text-align: left;
+
+		&.sticky {
+			position: fixed;
+			top: 30px;
+		}
 	}
 }
