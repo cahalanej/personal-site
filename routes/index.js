@@ -5,6 +5,11 @@ var express = require('express'),
     nodemailer = require('nodemailer');
 
 router.get('/', function(req, res) {
+    var oneYear = 24 * 60 * 60 * 1000 * 365; // not entirely accurate (because of leap years and things)
+    var now = new Date().getTime();
+    var bday = new Date(1992, 07, 01).getTime();
+    var age = Math.round(Math.abs(now - bday)/oneYear);
+
     res.render('layouts/about.html', {
         page: {
             title: 'About Jennifer Cahalane',
@@ -13,11 +18,19 @@ router.get('/', function(req, res) {
         },
         nav: {
             about_state: 'is-active'
+        },
+        about: {
+            age: age
         }
     });
 });
 
 router.get('/about', function(req, res) {
+    var oneYear = 24 * 60 * 60 * 1000 * 365; // not entirely accurate (because of leap years and things)
+    var now = new Date().getTime();
+    var bday = new Date(1992, 07, 01).getTime();
+    var age = Math.round(Math.abs(now - bday)/oneYear);
+
     res.render('layouts/about.html', {
         page: {
             title: 'About Jennifer Cahalane',
@@ -26,6 +39,9 @@ router.get('/about', function(req, res) {
         },
         nav: {
             about_state: 'is-active'
+        },
+        about: {
+            age: age
         }
     });
 });
@@ -67,10 +83,10 @@ router.get('/create/post/:postId', function(req, res) {
 });
 
 router.get('/create', function(req, res) {
-    request.get('https://api.tumblr.com/v2/blog/cahalanejennifer.tumblr.com/posts?api_key=' + config.TUMBLR_API_KEY,
+    request.get('https://api.tumblr.com/v2/blog/cahalanejennifer.tumblr.com/posts?tag=show_on_site&api_key=' + config.TUMBLR_API_KEY,
         function (error, response, body) {
             var data = JSON.parse(body);
-            // console.log(data.response.posts);
+
             res.render('layouts/create.html', {
                 page: {
                     title: 'Create -- Jennifer Cahalane',

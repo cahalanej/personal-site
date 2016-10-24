@@ -1,14 +1,16 @@
 .footer {
 	width: 100%;
 	background-color: $color__eastern-blue;
-	color: white;
+	color: $color__white;
 	padding: 10px;
 }
 
-.footer__copyright {
+.footer__copyright,
+.footer__link {
 	text-align: center;
 	font: 10px/10px $font__serif;
 	font-weight: $font-weight__light;
+	color: $color__white;
 }
 
 @media only screen and (min-width: 575px) {

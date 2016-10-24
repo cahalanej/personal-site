@@ -17,7 +17,7 @@ Experience
 
 _February 2016 to Present_
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nibh elit, congue in posuere sit amet, dignissim at mi. Pellentesque lacinia turpis sed ante ornare dignissim. Vivamus eleifend sem quis eros vulputate consequat. Mauris quis pellentesque mi. Nam vitae rhoncus eros. m quis volutpat. Etiam suscipit dictum diam, eu porttitor enim venenatis ut. Vestibulum sed molestie ante.
+Acted as lead to build a new content site in under 4 months.  Worked on all aspects of the site, including search, landing page, and content pages.  Focus on writing reuable, modular code using PHP, JavaScript, HTML, and SCSS.
 
 
 **Full Stack Developer**

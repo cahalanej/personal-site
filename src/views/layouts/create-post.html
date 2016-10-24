@@ -12,16 +12,18 @@
                 {% if post.type == "video" %}
 
                     {% set post_player = post.player | first %}
-
-                    {{ post_player.embed_code | safe }}
+                    {% for player in post.player %}
+                        <div class="media__video-player media__video-player--{{ player.width }}">
+                            {{ player.embed_code | safe }}
+                        </div>
+                    {% endfor %}
 
                 {% endif %}
 
                 {% if post.type == "photo" %}
-
-                    {% set post_photo = post.photos | first %}
-
-                    <img class="media-unit__image media-unit__image--post" src="{{ post_photo.original_size.url }}"/>
+                    {% for photo in post.photos %}
+                        <img class="media-unit__image media-unit__image--post" src="{{ photo.original_size.url }}"/>
+                    {% endfor %}
 
                 {% endif %}
             </div>
@@ -38,15 +40,12 @@
             </div>
         </div>
 
-        <div class="media__caption">
-            <div class="body-text">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam facilisis pretium augue et aliquet. Aliquam tincidunt mauris non accumsan fermentum. Etiam sit amet maximus leo. Suspendisse iaculis pellentesque lacus, eget ultricies tortor rhoncus in. Pellentesque et arcu mauris. Etiam facilisis orci non tellus convallis rhoncus. Nulla feugiat neque sed odio elementum, eget lacinia enim vehicula. Aliquam pulvinar quis lacus ullamcorper rhoncus. Donec euismod orci vitae ligula dapibus, a scelerisque sapien cursus.
-                </p>
-                <p>
-                    View the source on <a href="#">Github</a> or check out the <a href="#">live demo</a>.
-                </p>
+        {% if post.caption | length %}
+            <div class="media__caption">
+                <div class="body-text">
+                   {{ post.caption | safe}}
+                </div>
             </div>
-        </div>
+        {% endif %}
     </section>
 {% endblock %}

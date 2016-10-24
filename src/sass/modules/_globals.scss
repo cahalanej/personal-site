@@ -27,6 +27,13 @@ body {
 	margin: 0 auto;
 }
 
+.is-about,
+.is-contact {
+	.content-wrapper {
+		max-width: 800px;
+	}
+}
+
 @media only screen and (min-width: 575px) {
 	.content-wrapper {
 		padding: 30px 20px;
