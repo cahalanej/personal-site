@@ -144,7 +144,7 @@ router.post('/contact/send', function(req, res) {
                 }
             };
         }
-        console.log(response);
+        // console.log(response);
 
         res.render('layouts/contact-success.html', {
             page: {
