@@ -33,17 +33,17 @@ app.use('/', routes);
 // app.use('/api/', api_routes);
 
 // // catch 404 and forward to error handler
-// app.use(function(req, res, next) {
-//   var err = new Error('Not Found');
-//   err.status = 404;
-//   next(err);
-// });
+app.use(function(req, res, next) {
+  var err = new Error('Not Found');
+  err.status = 404;
+  next(err);
+});
 
 // // no stacktraces leaked to user
-// app.use(function(err, req, res, next) {
-//   res.status(err.status || 500);
-//   res.render('404.html');
-// });
+app.use(function(err, req, res, next) {
+  res.status(err.status || 500);
+  res.render('layouts/404.html');
+});
 
 // Kick start our server
 app.listen(app.get('port'), function() {
